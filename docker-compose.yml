@@ -1,0 +1,16 @@
+
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql_container_crud_jdbc
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: anime_store
+    ports:
+      - "3309:3306"
+    volumes:
+      - practice_data:/var/lib/mysql
+
+volumes:
+  container_test_data:
+  practice_data:
