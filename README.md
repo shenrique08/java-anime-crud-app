@@ -1,66 +1,57 @@
-# Java JDBC CRUD - Anime Database CLI
+# Java JDBC CLI CRUD - Anime Database
 
-This is a command-line interface (CLI) application built with Java that demonstrates CRUD (Create, Read, Update, Delete) operations on a MySQL database using JDBC. The application allows users to manage a simple database of animes and their producers.
+This Java-based CLI project demonstrates full CRUD operations on a MySQL database using JDBC. Built with a layered architecture and Dockerized database, it’s designed as a practical exercise to consolidate Java backend skills in a real-world context.
 
-## ✨ Features
+---
 
-* **Interactive CLI:** A user-friendly, menu-driven interface to interact with the database.
-* **Two Entities:** Full CRUD functionality for both `Anime` and `Producer` entities.
-* **Database Connection Pooling:** Uses HikariCP for efficient and reusable database connections.
-* **Clean Architecture:** The project is structured into layers (domain, repository, service) for better organization and maintenance.
-* **Dockerized Database:** The MySQL database is managed using Docker Compose for easy setup and teardown.
+## 🎯 Project Goals & Motivation
 
-## 🛠️ Technologies & Libraries Used
+This project was created to strengthen my backend development skills using core Java technologies. It reflects my hands-on approach to learning by building real solutions and applying best practices commonly seen in enterprise systems.
 
-* **Java 21**
-* **Maven** - Dependency Management
-* **MySQL** - Relational Database
-* **JDBC** - Java Database Connectivity API
-* **Docker && Docker Compose** - Containerization
-* **HikariCP** - High-performance JDBC connection pooling
-* **Lombok** - To reduce boilerplate code (e.g., getters, setters, builders)
-* **Log4j 2 && SLF4J** - For application logging
+Through this experience, I aimed to:
 
-## 📋 Prerequisites
+- Understand **how Java interacts with relational databases** using JDBC.
+- Learn and apply **design patterns and software architecture** principles like separation of concerns.
+- Embrace **DevOps tools** like Docker for reproducible environments.
+- Simulate a realistic workflow found in backend projects using Java and SQL.
 
-Before you begin, ensure you have the following installed on your system:
-* **JDK 21** || newer
-* **Apache Maven**
-* **Docker** && **Docker Compose**
+---
 
-## 🚀 Getting Started
+## 🚀 What I Learned & Practiced
 
-Follow these steps to get the application up and running.
+### ✅ Core Java & JDBC
 
-### 1. Clone the Repository
+- Wrote raw SQL queries for Create, Read, Update, and Delete operations.
+- Used `PreparedStatement` to avoid SQL injection and improve security.
+- Handled `SQLException` and managed JDBC resources properly with try-with-resources.
 
-```bash
-git clone [https://github.com/your-username/jdbc-anime-crud.git](https://github.com/your-username/jdbc-anime-crud.git)
-cd jdbc-anime-crud
-```
-*(Replace `your-username` and `jdbc-anime-crud` with your actual GitHub username and repository name.)*
+### ✅ Software Design & Architecture
 
-### 2. Start the Database
+- Applied a **layered architecture** (Domain → Repository → Service → Application).
+- Promoted separation of concerns, making the codebase cleaner and easier to maintain.
+- Modeled domain entities (`Anime`, `Producer`) with strong encapsulation.
 
-The project includes a `docker-compose.yml` file to easily spin up a MySQL database instance.
+### ✅ Database & Environment Setup
 
-```bash
-docker-compose up -d
-```
-This command will download the MySQL image (if you don't have it) and start the database container in detached mode. Please wait about 30-60 seconds for the database to fully initialize.
+- Used **Docker + Docker Compose** to spin up and manage a MySQL instance.
+- Configured automatic database schema setup through container initialization.
 
-### 3. Build the Project
+### ✅ Advanced Practices
 
-Use Maven to compile the source code and download all the necessary dependencies.
+- Integrated **HikariCP** for efficient connection pooling.
+- Used **Lombok** to reduce boilerplate (e.g., builders, getters).
+- Employed **SLF4J + Log4j 2** for structured logging.
+- Worked with `Optional`, streamlining null handling and improving code clarity.
 
-```bash
-mvn clean install
-```
+---
 
-### 4. Run the Application
+This codebase can be expanded in the future to include features like:
 
-You can run the application directly from your favorite IDE (like IntelliJ or VS Code) by locating the `App.java` file and running its `main` method.
+- Web layer with Spring Boot
+- Unit tests (JUnit + Mockito)
+- Deployment to a cloud provider (e.g., Heroku, AWS)
 
+---
 ## 💻 How to Use
 
 Once the application is running, you will see the main menu in your console:
@@ -98,9 +89,6 @@ src/main/java/org
 The application uses two tables: `producer` and `anime`. The `anime` table has a foreign key relationship with the `producer` table.
 
 ```sql
--- This schema is automatically created by MySQL inside the Docker container
--- based on the environment variables in docker-compose.yml.
--- You don't need to run this manually unless setting up the database outside of Docker.
 
 CREATE DATABASE IF NOT EXISTS anime_store;
 USE anime_store;
@@ -120,6 +108,7 @@ CREATE TABLE anime (
 
 ```
 
----
+## 📬 Final Thoughts
 
-*This README was generated with help from Gemini.*
+This project was more than just a CRUD system – it was a journey of exploration through Java’s ecosystem. It helped me understand backend software construction from scratch and solidified my interest in backend engineering using Java.
+
