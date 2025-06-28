@@ -38,6 +38,7 @@ Through this experience, I aimed to:
 
 ### ✅ Advanced Practices
 
+- **Maven** for managing dependencies
 - Integrated **HikariCP** for efficient connection pooling.
 - Used **Lombok** to reduce boilerplate (e.g., builders, getters).
 - Employed **SLF4J + Log4j 2** for structured logging.
